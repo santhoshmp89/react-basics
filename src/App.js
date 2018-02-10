@@ -12,6 +12,7 @@ import {DidMountParent, CounterParent} from './life-cycle/componentDidMount';
 import {ShouldUpdateParent} from './life-cycle/shouldComponentUpdate';
 import {CounterMount} from './life-cycle/componentDidMount-counter';
 import PureComponent from './pure-components';
+import LifeCycleCounter, {OneCounter} from './life-cycle/Counter-with-lifecycle';
 
 class App extends Component{
 
@@ -140,6 +141,12 @@ class App extends Component{
 
           <PureComponent />
 
+          <br /><br />
+
+          <hr />
+
+          <LifeCycleCounter />
+          <OneCounter />
           <br /><br />
 
           <hr />
