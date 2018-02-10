@@ -21,7 +21,7 @@ CustomValElement.propTypes = {
 			return new Error(`Missing ${propName}`);
 		}
 
-		if(props[propName].length > 10) {
+		if(props[propName].length < 10) {
 			return new Error(`${propName} Props has more character`);
 		}
 	}

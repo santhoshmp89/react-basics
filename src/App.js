@@ -1,7 +1,17 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Button, ButtonContent} from './Button';
-import {CustomVal} from './CustomValidationProps'
+import {CustomVal} from './CustomValidationProps';
+import {FocusForm as FocusableForm, RefForm, InputList, ParentFor} from './Ref-Example';
+import {CompLifeCycle} from './component-life-cycle-2';
+import {Employee} from './life-cycle/componentWillMount';
+import ParentProps from './props-passing';
+import ParentWillReceiveProps from './life-cycle/componentWillReceiveProps';
+import {ParentFrag} from './fragment-com';
+import {DidMountParent, CounterParent} from './life-cycle/componentDidMount';
+import {ShouldUpdateParent} from './life-cycle/shouldComponentUpdate';
+import {CounterMount} from './life-cycle/componentDidMount-counter';
+import PureComponent from './pure-components';
 
 class App extends Component{
 
@@ -39,6 +49,101 @@ class App extends Component{
          <hr />
 
          <CustomVal />
+
+         <br /><br />
+
+         <hr />
+
+         <FocusableForm />
+
+         <RefForm />  
+
+         <br /><br />
+
+         <hr />
+
+         <p> Refs with instance of component</p>
+
+          <InputList />         
+          -------------------------------------
+
+          <p> Refs with stateless component</p>
+
+          <ParentFor />
+
+          <br /><br />
+
+          <hr />
+
+          <p>Component Life Cycle</p>
+
+          <br />
+              <CompLifeCycle />
+          <hr />
+          <p> 1. componentWillMount</p>
+
+          <Employee />
+
+          <br /><br />
+
+          <hr />
+
+          <p> Passing props to child component</p>
+
+          <ParentProps />
+
+          <br /><br />
+
+          <hr />
+
+          <p> componentWillReceiveProps Example</p>
+
+          <ParentWillReceiveProps />
+
+          <br /><br />
+
+          <hr />
+
+           <p> Frangment Example</p>
+          <ParentFrag />
+
+           <br /><br />
+
+          <hr />
+
+          <p> componentDidMount Example</p>
+            
+            <DidMountParent />
+
+           <br /><br />
+
+          <hr />
+
+          <p> shouldComponentUpdate Example</p>
+
+          <ShouldUpdateParent />
+
+          <br /><br />
+
+          <hr />
+
+          <p>Component With counter setinterval</p>
+          <CounterMount />
+
+          <br /><br />
+
+          <hr />
+          
+
+          <p>--------------------------------------</p> 
+          <p>Pure COmponent</p>
+
+          <PureComponent />
+
+          <br /><br />
+
+          <hr />
+          
       </div>
     )
   }
