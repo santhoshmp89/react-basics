@@ -30,9 +30,6 @@ class ShouldUpdateChild extends Component {
 
 	shouldComponentUpdate(nextPro, nextST) {
 		console.log(`prevProps: ${this.props.name}, nextPro: ${nextPro.name}, prevSt: ${this.state.name}, nextST: ${nextST.name}`)
-		
-
-
 		return true
 	}
 
@@ -79,7 +76,6 @@ export class ShouldUpdateParent extends Component{
 		return(
 			<React.Fragment>
 				<button onClick={this.parentClick.bind(this)} > Parent ShouldUpdateChild </button>
-
 				<ShouldUpdateChild name={this.state.name} stateAsProps={this.state.stateAsProps}/>
 			</React.Fragment>
 		)

@@ -10,9 +10,11 @@ import ParentWillReceiveProps from './life-cycle/componentWillReceiveProps';
 import {ParentFrag} from './fragment-com';
 import {DidMountParent, CounterParent} from './life-cycle/componentDidMount';
 import {ShouldUpdateParent} from './life-cycle/shouldComponentUpdate';
+import {ShouldParent} from './life-cycle/shouldComponentUpdateNew';
 import {CounterMount} from './life-cycle/componentDidMount-counter';
 import PureComponent from './pure-components';
 import LifeCycleCounter, {OneCounter} from './life-cycle/Counter-with-lifecycle';
+import {UsersList} from './userAge/user-age';
 
 class App extends Component{
 
@@ -126,6 +128,9 @@ class App extends Component{
 
           <br /><br />
 
+          <p> shouldComponentUpdate Example</p>
+          <ShouldParent />
+
           <hr />
 
           <p>Component With counter setinterval</p>
@@ -151,6 +156,16 @@ class App extends Component{
 
           <hr />
           
+          <p>User List COmponent</p>
+
+          <UsersList />
+
+          <br /><br />
+
+          <hr />
+          
+
+
       </div>
     )
   }
