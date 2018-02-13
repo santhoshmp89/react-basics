@@ -15,6 +15,7 @@ import {CounterMount} from './life-cycle/componentDidMount-counter';
 import PureComponent from './pure-components';
 import LifeCycleCounter, {OneCounter} from './life-cycle/Counter-with-lifecycle';
 import {UsersList} from './userAge/user-age';
+import SetStateProps from './SetStateFromProps/setStateProps';
 
 class App extends Component{
 
@@ -163,8 +164,14 @@ class App extends Component{
           <br /><br />
 
           <hr />
-          
 
+          <p>Set state from props</p>
+          
+           <SetStateProps />
+
+          <br /><br />
+
+          <hr />
 
       </div>
     )

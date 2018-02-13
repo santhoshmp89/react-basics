@@ -32,9 +32,11 @@ export class UsersList extends Component{
 				{name: "Kumar", age: 31},
 				{name: "Assssssd", age:43}
 			],
-			title: 'Users List'
+			title: 'Users List',
+			filter: ""
 		}
 		this.makeYounger = this.makeYounger.bind(this);
+		this.filterValue = this.filterValue.bind(this);
 	}
 
 	makeYounger = () => {
@@ -73,7 +75,23 @@ export class UsersList extends Component{
 		console.log(state);
 	}*/
 
+	filterValue(e) {
+		console.log(e.target.value);
+		this.setState({
+			filter: e.target.value
+		})
+	}
+
 	render() {
+
+		var items = this.state.user;
+
+		if(this.state.filter) {
+			items = items.filter((item) => {
+				return item.name.toLowerCase().includes(this.state.filter.toLowerCase());
+			})
+		}
+
 		return(
 			<Fragment>
 			<h4>{this.state.title}</h4>
@@ -83,8 +101,11 @@ export class UsersList extends Component{
 			{/*<UserProfile name={this.state.user[0].name} age={this.state.user[0].age}  />
 			<UserProfile name={this.state.user[1].name} age={this.state.user[1].age}  />
 			<UserProfile name={this.state.user[2].name} age={this.state.user[2].age}  />*/}
-			{this.state.user.map((items) => {
-				return <UserProfile name={items.name} age={items.age} />
+			<br />
+			<input type="text" value={this.state.filter} onChange={this.filterValue} />
+			<br />
+			{items.map((item) => {
+				return <UserProfile name={item.name} age={item.age} />
 			})}
 
 			</Fragment>
